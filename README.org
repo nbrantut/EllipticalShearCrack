@@ -1,0 +1,7 @@
+* EllipticalShearCrack
+
+This code is an implementation (right now only in Matlab) of the closed-form solution for acceleration and stresses around a dynamically expanding elliptical shear crack, published as:
+
+ ``The dynamic field of a growing plane elliptical shear crack'', by Paul G. Richard, /Int. J. Solids Structures, 9/, pp. 843-861, 1973.
+
+The original paper contained some difficult typos, corrected [[note.pdf][here]].
