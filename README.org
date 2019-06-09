@@ -5,3 +5,5 @@ This code is an implementation (right now only in Matlab) of the closed-form sol
  ``The dynamic field of a growing plane elliptical shear crack'', by Paul G. Richard, /Int. J. Solids Structures, 9/, pp. 843-861, 1973.
 
 The original paper contained some difficult typos, corrected [[note.pdf][here]].
+
+At the moment the code still has a major bug, and it is not sure whether more typos exist in the text or if it is an implementation issue. What I see is that the results for all fields except for uz jump between tau_0s and tau_0d. This will be corrected as soon as possible.
