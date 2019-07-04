@@ -1,9 +1,11 @@
 * EllipticalShearCrack
 
-This code is an implementation (right now only in Matlab) of the closed-form solution for acceleration and stresses around a dynamically expanding elliptical shear crack, published as:
+This code is a Julia implementation of the closed-form solution for acceleration and stresses around a dynamically expanding elliptical shear crack, published as:
 
  ``The dynamic field of a growing plane elliptical shear crack'', by Paul G. Richard, /Int. J. Solids Structures, 9/, pp. 843-861, 1973.
 
-The original paper contained some difficult typos.
+The original paper contained a few nontrivial typos.
 
-WARNING: At the moment the code still has major bugs, and it is not sure whether more typos exist in the text or if it is an implementation issue.
+To use the code, simply `include` the file `ell_shearcrack.jl`, and then call the function `ellipticalshearcrack` with the relevant arguments. A full example is given in `example.jl`, where figure 9 of Richards (1973) is reproduced.
+
+I am deeply grateful to Paul Richards, who kindly shared his Fortran 4 implementation and pointed to a few typographical errors.

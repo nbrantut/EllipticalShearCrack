@@ -1,5 +1,27 @@
 using QuadGK
 
+"""
+    ellipticalshearcrack(t, c, θ, ϕ, Σ, N, cdcs; kwargs...)
+
+Compute a given component of either normalised acceleration or stress rate around a dynamically expanding, self-similar, elliptical shear crack, using the formulae given in Richards, IJSS 1973.
+
+Normalisations follow those of Richards 1973. Numerical integration is done with the QuadGK package (note: this method seems to be immune to nearby singularities in the integration path, so that the explicit extraction of those singularities as described by Richards in the appendix seem a bit redundant. Here I implemented the full method for safety but tests show it might be overkill. Richards (pers. comm.) used Romberg integration so that singularities were more of a problem.)
+
+# Arguments:
+ - `t`: an array of normalised time
+ - `c`: a String indicating which component to compute. Values can be ''ux'', ''uy'', ''uz'' (normalised accelerations) or ''zx'', ''zy'', ''zz'' (normalised stress rates).
+ - `θ`: angle of point of interest from normal to shear crack.
+ - `ϕ`: azimuth of point of interest from x direction.
+ - `Σ`: rupture speed in x direction.
+ - `N`: rupture speed in y direction.
+ - `cdcs`: ratio of P to S wave speed.
+ - additional keyword arguments can be passed to the `quadgk` numerical integration algorithm.
+
+# Acknowledgments
+
+I am deeply grateful to Paul Richards for his help and for sharing his original Fortran code.
+
+"""
 function ellipticalshearcrack(t,c,θ,ϕ,Σ,N,cdcs;kwargs...)
 
     p = param(θ,ϕ,Σ,N,cdcs)

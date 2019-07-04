@@ -5,3 +5,9 @@ auto
 *.blg
 *.bbl
 *.out
+*.pdf
+old
+fromPGR
+figsPGR
+*.part.jl
+*.m
